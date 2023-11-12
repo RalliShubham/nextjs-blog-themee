@@ -1,121 +1,105 @@
----
-title: How to create SVG-ready icon symbols in Sketch PART 2
-description: "Something has always existed. According to physics, there can never be true physical nothingness—though there can be times when existence resembles nothing, such as a vacuum (the state of minimum possible energy) (Phys.org). Creating a space where there are no quantum."
-date: May 8 2021
----
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Projects</title>
 
-Something has always existed. According to physics, there can never be true physical nothingness—though there can be times when existence resembles nothing, such as a vacuum (the state of minimum possible energy) (Phys.org). Creating a space where there are no quantum fluctuations requires an enormous amount of energy, and there would be a remnant of that energy in that space afterwards if the fluctuations were flushed out, plus an unstable environment (1veritasium). Even on computers, deleted data is not actually tossed away, by rather written over.
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
 
-# h1 Heading
+        header {
+            background-color: #007bff;
+            color: #fff;
+            padding: 1em;
+            text-align: center;
+        }
 
-## h2 Heading
+        main {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
 
-### h3 Heading
+        section {
+            margin-bottom: 40px;
+        }
 
-#### h4 Heading
+        h2 {
+            color: #007bff;
+        }
 
-##### h5 Heading
+        .project-button {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            margin-bottom: 10px;
+            width: 100%;
+            text-align: left;
+        }
 
-###### h6 Heading
+        .project-details {
+            display: none;
+            background-color: #fff;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
 
-## Horizontal Rules
+        .project-details p {
+            margin-bottom: 10px;
+        }
 
----
+        .project-skills {
+            margin-top: 10px;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
 
+    <header>
+        <h1>Your Projects</h1>
+    </header>
 
-## Emphasis
+    <main>
 
-**This is bold text**
+        <section>
+            <h2>Industry Related Projects</h2>
 
-**This is bold text**
+            <button class="project-button" onclick="toggleDetails('project1')">Portable EV Charger Market Analysis</button>
+            <div class="project-details" id="project1">
+                <p>Charging into the future with the Naveen Jindal School of Management, UT Dallas! ⚡</p>
+                <p>Objective: Unplugging the mysteries of the Portable EV Charger market.</p>
+                <p>Market Insights: 86% interest, $1500 pricing magic, and targeting full-time workers and students!</p>
+                <p>Sustainability Impact: Turning green dreams into electric reality. 🌱</p>
+                <p class="project-skills">Skills: Data Visualization 📊, Microsoft Excel 💻, Financial Accounting 📈, Tableau 🎨, Research 🔍</p>
+                <a href="https://www.linkedin.com/posts/shubhamralli_evcharging-sustainability-innovation-activity-7126658075322679296-o-LK?utm_source=share&utm_medium=member_desktop" target="_blank">LinkedIn Post</a>
+            </div>
 
-_This is italic text_
+            <!-- Repeat the above structure for other projects -->
 
-_This is italic text_
+        </section>
 
-~~Strikethrough~~
+        <!-- Add more sections for different project categories -->
 
-## Blockquotes
+    </main>
 
-> Blockquotes can also be nested...
->
-> > ...by using additional greater-than signs right next to each other...
-> >
-> > > ...or with spaces between arrows.
+    <script>
+        function toggleDetails(projectId) {
+            var details = document.getElementById(projectId);
+            details.style.display = (details.style.display === 'none' || details.style.display === '') ? 'block' : 'none';
+        }
+    </script>
 
-## Lists
-
-Unordered
-
-- Create a list by starting a line with `+`, `-`, or `*`
-- Sub-lists are made by indenting 2 spaces:
-  - Marker character change forces new list start:
-    - Ac tristique libero volutpat at
-    * Facilisis in pretium nisl aliquet
-    - Nulla volutpat aliquam velit
-- Very easy!
-
-Ordered
-
-1. Lorem ipsum dolor sit amet
-2. Consectetur adipiscing elit
-3. Integer molestie lorem at massa
-
-4. You can use sequential numbers...
-5. ...or keep all the numbers as `1.`
-
-Start numbering with offset:
-
-57. foo
-1. bar
-
-## Code
-
-Inline `code`
-
-Indented code
-
-    // Some comments
-    line 1 of code
-    line 2 of code
-    line 3 of code
-
-Block code "fences"
-
-```
-Sample text here...
-```
-
-Syntax highlighting
-
-```js
-var foo = function (bar) {
-  return bar++;
-};
-
-console.log(foo(5));
-```
-
-## Tables
-
-| Option | Description                                                               |
-| ------ | ------------------------------------------------------------------------- |
-| data   | path to data files to supply the data that will be passed into templates. |
-| engine | engine to be used for processing templates. Handlebars is the default.    |
-| ext    | extension to be used for dest files.                                      |
-
-Right aligned columns
-
-| Option |                                                               Description |
-| -----: | ------------------------------------------------------------------------: |
-|   data | path to data files to supply the data that will be passed into templates. |
-| engine |    engine to be used for processing templates. Handlebars is the default. |
-|    ext |                                      extension to be used for dest files. |
-
-## Links
-
-[link text](http://dev.nodeca.com)
-
-[link with title](http://nodeca.github.io/pica/demo/ "title text!")
-
-Autoconverted link https://github.com/nodeca/pica (enable linkify to see)
+</body>
+</html>
