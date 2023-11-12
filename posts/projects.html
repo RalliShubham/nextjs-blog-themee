@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects</title>
+    <!-- Include your CSS stylesheets and other necessary resources here -->
+</head>
+<body>
+
+<!-- Projects Page -->
+<h1>Projects</h1>
+
+<!-- Container to hold project buttons -->
+<div id="projectButtonsContainer">
+    <!-- Project buttons will be appended here using JavaScript -->
+</div>
+
+<!-- Container to display project details -->
+<div id="projectDetailsContainer" style="display: none;">
+    <h2 id="projectDetailsTitle"></h2>
+    <p id="projectDetailsDescription"></p>
+    <p id="projectDetailsDate"></p>
+    <!-- Add other project details as needed -->
+    <button onclick="window.location.href = 'index.html';">Back to Home</button>
+</div>
+
+<script>
+// JavaScript to handle the display of projects
+
+document.addEventListener('DOMContentLoaded', function () {
+    showProjectButtons();
+});
+
+function showProjectButtons() {
+    // Get the project data (you can fetch this data dynamically)
+    const projectData = [
+        { id: 1, name: 'Portable EV Charger Market Analysis', description: 'Unplugging the mysteries of the Portable EV Charger market.', date: 'August 2023' },
+        { id: 2, name: 'IBM Data Analyst Capstone Project', description: 'Diving deep into data oceans with IBM!', date: 'June - July 2023' },
+        // Add other project details as needed
+    ];
+
+    // Create buttons for each project
+    const buttonsContainer = document.getElementById('projectButtonsContainer');
+    projectData.forEach(project => {
+        const button = document.createElement('button');
+        button.textContent = project.name;
+        button.addEventListener('click', function () {
+            displayProjectDetails(project);
+        });
+        buttonsContainer.appendChild(button);
+    });
+}
+
+function displayProjectDetails(project) {
+    // Hide the project buttons container
+    document.getElementById('projectButtonsContainer').style.display = 'none';
+
+    // Show the container for project details
+    const detailsContainer = document.getElementById('projectDetailsContainer');
+    detailsContainer.style.display = 'block';
+
+    // Display project details
+    document.getElementById('projectDetailsTitle').textContent = project.name;
+    document.getElementById('projectDetailsDescription').textContent = project.description;
+    document.getElementById('projectDetailsDate').textContent = `Date: ${project.date}`;
+}
+</script>
+
+</body>
+</html>
